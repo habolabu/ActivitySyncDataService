@@ -1,13 +1,12 @@
 package edu.ou.activitysyncdataservice.common.mapper;
 
 import edu.ou.activitysyncdataservice.data.CommentDocument;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
 import java.util.Date;
 import java.util.Map;
+import java.util.Objects;
 
 @Mapper
 public interface CommentDocumentMapper {
@@ -50,7 +49,10 @@ public interface CommentDocumentMapper {
      * @author Nguyen Trung Kien - OU
      */
     @Named("objectToInt")
-    static int objectToInt(Object object) {
+    static Integer objectToInt(Object object) {
+        if(Objects.isNull(object)){
+            return null;
+        }
         return (int) object;
     }
 

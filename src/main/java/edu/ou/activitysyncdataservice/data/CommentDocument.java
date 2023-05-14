@@ -18,5 +18,5 @@ public class CommentDocument implements Serializable {
     private Date createdAt;
     private int userId;
     private int postId;
-    private int commentId;
+    private Integer commentId;
 }
